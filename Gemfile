@@ -8,7 +8,6 @@ gem 'table_print'
 gem 'faker'
 gem 'simple_form'
 gem 'bcrypt'
-gem 'letter_opener'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -59,6 +58,9 @@ group :development do
   # Debugging
   gem "better_errors"
   gem "binding_of_caller"
+
+  # Send emails
+  gem 'letter_opener'
 end
 
 group :test do
