@@ -30,8 +30,13 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Sign up", root_path, class: 'nav-link' %></li>
-            <li><%= link_to "Sign in", root_path, class: 'nav-link' %></li>
+            <% if current_user %>
+              <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path, class: 'nav-link' %></li>
+              <li><%= link_to "Sign in", new_user_session_path, class: 'nav-link' %></li>
+            <% end %>
           </ul>
         </div>
       </nav>

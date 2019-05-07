@@ -4,6 +4,12 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= label_tag 'Prénom' %>
+    <%= f.text_field :first_name %>
+    <%= label_tag 'Nom' %>
+    <%= f.text_field :last_name %>
+    <%= label_tag 'Description' %>
+    <%= f.text_field :description %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
