@@ -1,1 +1,26 @@
-<h1>Hello, liste de tous les events</h1>
+<% if user_signed_in? %>
+  <p><%= link_to "Par ici si tu veux créer un nouvel évenement", new_event_path, class: 'navbar-brand' %></p>
+<% else %>
+  <p><%= link_to "Par ici si tu veux créer un nouvel évenement", new_user_session_path, class: 'navbar-brand' %></p>
+<% end %>
+
+
+<h3>Hello visiteur ! Voici tous les potins de THP :</h3>
+
+<div class="row">
+  <% @events.each do |event| %>
+    <div class="col-sm-4" style="padding: 30px">
+      <div class="card">
+        <div class="card-header">
+          <h4><%= event.title %></h4>
+        </div>
+        <div class="card-body">
+          <p>Description : <%= event.description %></p>
+          <p>Location : <%= event.location %></p>
+          <p>Price : <%= event.price %></p>
+          <%= link_to "En savoir plus...", event_path(event.id), class:"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
