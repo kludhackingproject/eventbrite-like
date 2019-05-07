@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Customs
+  config.action_mailer.default_url_options = { host: 'klud-eventbrite-like.herokuapp.com' }
 end
